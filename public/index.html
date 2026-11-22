@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f4ef">
+  <meta name="description" content="Lily is a voice-first health information assistant.">
+  <title>Lily — Voice Health Assistant</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Lily home">
+        <span class="brand-mark">L</span>
+        <span><strong>lily</strong><small>voice health companion</small></span>
+      </a>
+      <span class="privacy-pill"><span class="dot"></span> Private local session</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR FRIENDLY HEALTH INFORMATION GUIDE</p>
+      <h1>A little clarity.<br><em>A lot less worry.</em></h1>
+      <p class="intro-copy">Ask Lily about health topics or finding care near you. Just speak naturally — she'll do the listening.</p>
+    </section>
+
+    <section class="assistant-card" aria-label="Lily voice assistant">
+      <div class="mascot-stage">
+        <div class="mascot-halo"></div>
+        <img id="duck" class="duck" src="/assets/lily-duck.png" alt="Lily, a cheerful yellow duck wearing a teal scarf" tabindex="0">
+        <span id="mood" class="mood-bubble" aria-hidden="true">Hey!</span>
+      </div>
+
+      <div class="assistant-intro">
+        <span class="online-label"><span class="dot"></span> HERE WITH YOU</span>
+        <h2>Hi, I'm Lily!</h2>
+        <p id="status" class="status" aria-live="polite">Your voice assistant. How can I help you today?</p>
+      </div>
+
+      <div class="voice-controls">
+        <button id="startBtn" class="start-button" type="button">Start with Lily <span aria-hidden="true">→</span></button>
+        <button id="micBtn" class="mic-button" type="button" aria-label="Start recording" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2.5" width="6" height="12" rx="3"></rect><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3.5M8.5 21.5h7"></path></svg>
+        </button>
+        <span id="micHint" class="mic-hint">Tap the microphone to speak</span>
+      </div>
+
+      <div class="secondary-controls">
+        <button id="endBtn" class="text-button" type="button" disabled>End conversation</button>
+        <button id="resetBtn" class="text-button" type="button">Reset</button>
+      </div>
+
+      <div class="location-panel">
+        <div class="location-copy">
+          <strong>Care near you?</strong>
+          <span id="locationStatus">Share approximate location or enter a city.</span>
+        </div>
+        <div class="location-actions">
+          <button id="locationBtn" class="outline-button" type="button">Use my location</button>
+          <input id="manualLocation" type="text" maxlength="120" placeholder="City / region" aria-label="City or region">
+        </div>
+      </div>
+
+      <div class="language-row">
+        <label for="language">Spoken language</label>
+        <select id="language">
+          <option value="en-US">English (US)</option>
+          <option value="en-IN">English (India)</option>
+          <option value="en-GB">English (UK)</option>
+          <option value="hi-IN">हिन्दी</option>
+          <option value="es-ES">Español</option>
+          <option value="fr-FR">Français</option>
+        </select>
+        <span id="voiceLabel" class="voice-label">Device voice</span>
+      </div>
+    </section>
+
+    <section class="conversation-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR SESSION</p><h2>Conversation notes</h2></div>
+        <button id="downloadBtn" class="download-button" type="button" disabled>↓ Download transcript</button>
+      </div>
+      <div id="conversation" class="conversation" aria-live="polite">
+        <div class="empty-state">
+          <span class="empty-icon">✦</span>
+          <p>Your conversation will appear here after you speak.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p><strong>A friendly reminder:</strong> Lily provides general health information, not diagnosis or medical treatment. For emergencies, contact your local emergency service immediately.</p>
+      <p class="fine-print">Fan-made duck persona. Not affiliated with or endorsed by any entertainment studio. Your transcript stays in this browser session unless you download it. Your spoken question is sent to the configured AI provider to generate an answer.</p>
+    </footer>
+  </main>
+</body>
+</html>

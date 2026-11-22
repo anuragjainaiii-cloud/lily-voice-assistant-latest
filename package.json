@@ -1,0 +1,18 @@
+{
+  "name": "lily-voice-health-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local, voice-first health information assistant with a fan-made duck persona.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "17.2.3",
+    "express": "5.1.0",
+    "helmet": "8.1.0"
+  }
+}
